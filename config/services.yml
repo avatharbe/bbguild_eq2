@@ -1,6 +1,11 @@
 services:
     avathar.bbguild_eq2.installer:
         class: avathar\bbguild_eq2\game\eq2_installer
+        arguments:
+            - '@dbal.conn'
+            - '@cache'
+            - '@config'
+            - '@user'
 
     avathar.bbguild_eq2.provider:
         class: avathar\bbguild_eq2\game\eq2_provider

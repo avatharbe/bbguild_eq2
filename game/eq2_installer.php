@@ -26,9 +26,7 @@ class eq2_installer extends abstract_game_install
 	 */
 	protected function install_factions()
 	{
-		global $db;
-
-		$db->sql_query('DELETE FROM ' . $this->table('bb_factions_table') . " WHERE game_id = '" . $db->sql_escape($this->game_id) . "'");
+		$this->db->sql_query('DELETE FROM ' . $this->table('bb_factions_table') . " WHERE game_id = '" . $db->sql_escape($this->game_id) . "'");
 		$sql_ary = array();
 		$sql_ary[] = array('game_id' => $this->game_id, 'faction_id' => 1, 'faction_name' => 'Good');
 		$sql_ary[] = array('game_id' => $this->game_id, 'faction_id' => 2, 'faction_name' => 'Evil');
@@ -41,9 +39,7 @@ class eq2_installer extends abstract_game_install
 	 */
 	protected function install_classes()
 	{
-		global $db;
-
-		$db->sql_query('DELETE FROM ' . $this->table('bb_classes_table') . " WHERE game_id = '" . $db->sql_escape($this->game_id) . "'");
+		$this->db->sql_query('DELETE FROM ' . $this->table('bb_classes_table') . " WHERE game_id = '" . $db->sql_escape($this->game_id) . "'");
 		$sql_ary = array();
 		$sql_ary[] = array('game_id' => $this->game_id, 'class_id' => 0,  'class_faction_id' => 3, 'class_armor_type' => 'PLATE',   'class_min_level' => 1, 'class_max_level' => 99, 'colorcode' => '#DCD09A', 'imagename' => 'eq2_unknown');
 		$sql_ary[] = array('game_id' => $this->game_id, 'class_id' => 1,  'class_faction_id' => 3, 'class_armor_type' => 'MAIL',    'class_min_level' => 1, 'class_max_level' => 99, 'colorcode' => '#FFFF66', 'imagename' => 'eq2_assassin');
@@ -203,9 +199,7 @@ class eq2_installer extends abstract_game_install
 	 */
 	protected function install_races()
 	{
-		global $db;
-
-		$db->sql_query('DELETE FROM ' . $this->table('bb_races_table') . " WHERE game_id = '" . $db->sql_escape($this->game_id) . "'");
+		$this->db->sql_query('DELETE FROM ' . $this->table('bb_races_table') . " WHERE game_id = '" . $db->sql_escape($this->game_id) . "'");
 		$sql_ary = array();
 		$sql_ary[] = array('game_id' => $this->game_id, 'race_id' => 0,  'race_faction_id' => 2);
 		$sql_ary[] = array('game_id' => $this->game_id, 'race_id' => 1,  'race_faction_id' => 3);
